@@ -1,0 +1,40 @@
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+
+
+
+
+driver = webdriver.Chrome()
+
+
+driver.get('https://www.google.com.br/')
+#Metodo de driver no Selenium, para maximizar tela.
+driver.maximize_window()
+driver.implicitly_wait(20)
+# Metodo para procurar um elemento.
+#element = driver.find_element_by_tag_name('input[name=\"btnI\"]')
+element = driver.find_element(By.NAME, "btnI")
+
+#/html/body/div[1]/div[2]/div/img
+
+#Irá imprimir o do metodo "driver.find_element"
+print(element.get_attribute('value'))
+#value_button = element.get_attribute('value')
+
+#assert "estou com sorte" == value_button.lower()
+
+driver.quit()
+
+
+driver.set_page_load_timeout(10)
+driver.find_element_by_id()
+driver. find_element_by_class_name()
+driver.find_element_by_css_selector()
+driver.find_element_by_xpath()
+driver. find_element_by_name()
+driver. find_element_by_link_text()
+driver. find_element_by_partial_link_text()
+print(driver.current_url)
+print(driver.page_source)
+print(driver.title)
